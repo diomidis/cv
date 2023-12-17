@@ -1,10 +1,10 @@
 %-------------------------
-% Resume in Latex
-% Author : Sourabh Bajaj
+% My resume in Latex
+% Author : Diomidis Anadiotis
 % License : MIT
 %------------------------
 
-\documentclass[letterpaper,11pt]{article}
+\documentclass[letterpaper,10pt]{article}
 
 \usepackage{latexsym}
 \usepackage[empty]{fullpage}
@@ -17,14 +17,30 @@
 \usepackage{fancyhdr}
 \usepackage[english]{babel}
 \usepackage{tabularx}
+\usepackage{hyphenat}
+\usepackage{fontawesome}
+\usepackage{xcolor}
 \input{glyphtounicode}
+
+
+%---------- FONT OPTIONS ----------
+% sans-serif
+% \usepackage[sfdefault]{FiraSans}
+% \usepackage[sfdefault]{roboto}
+% \usepackage[sfdefault]{noto-sans}
+% \usepackage[default]{sourcesanspro}
+
+% serif
+% \usepackage{CormorantGaramond}
+% \usepackage{charter}
+
 
 \pagestyle{fancy}
 \fancyhf{} % clear all header and footer fields
-\fancyfoot{}
 \renewcommand{\headrulewidth}{0pt}
 \renewcommand{\footrulewidth}{0pt}
 
+% Adjust margins to reduce whitespace
 % Adjust margins
 \addtolength{\oddsidemargin}{-0.5in}
 \addtolength{\evensidemargin}{-0.5in}
@@ -48,161 +64,197 @@
 
 %-------------------------
 % Custom commands
-\newcommand{\resumeItem}[2]{
+
+\newcommand{\resumeItem}[1]{
   \item\small{
-    \textbf{#1}{: #2 \vspace{-2pt}}
+    {#1 \vspace{-1pt}}
   }
 }
 
-% Just in case someone needs a heading that does not need to be in a list
-\newcommand{\resumeHeading}[4]{
-    \begin{tabular*}{0.99\textwidth}[t]{l@{\extracolsep{\fill}}r}
-      \textbf{#1} & #2 \\
-      \textit{\small#3} & \textit{\small #4} \\
-    \end{tabular*}\vspace{-5pt}
-}
-
 \newcommand{\resumeSubheading}[4]{
-  \vspace{-1pt}\item
+  \item
     \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
       \textbf{#1} & #2 \\
       \textit{\small#3} & \textit{\small #4} \\
-    \end{tabular*}\vspace{-5pt}
+    \end{tabular*}\vspace{1mm}
 }
 
 \newcommand{\resumeSubSubheading}[2]{
+    \item
     \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
       \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{1mm}
+}
+
+
+\newcommand{\resumeEducationHeading}[6]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+      \textit{\small#5} & \textit{\small #6} \\
     \end{tabular*}\vspace{-5pt}
 }
 
-\newcommand{\resumeSubItem}[2]{\resumeItem{#1}{#2}\vspace{-4pt}}
 
-\renewcommand{\labelitemii}{$\circ$}
+\newcommand{\resumeProjectHeading}[2]{
+    \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
 
-\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=*]}
+
+\newcommand{\resumeOrganizationHeading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & \textit{\small #2} \\
+      \textit{\small#3}
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
 \newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
 \newcommand{\resumeItemListStart}{\begin{itemize}}
 \newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
 
 %-------------------------------------------
-%%%%%%  CV STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{document}
 
-%----------HEADING-----------------
-\begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
-  \textbf{\href{http://diomidis.net}{\Large Diomidis Anadiotis}} & Email : \href{mailto:info@diomidis.net}{info@diomidis.net}\\
-  \href{https://diomidis.net}{https://diomidis.net} & Mobile : \href{tel:+447518630975}{+447518630975} \\
-\end{tabular*}
+%---------- HEADING ----------
 
+\begin{center}
+    \textbf{\LARGE \scshape Diomidis Anadiotis} \\ \vspace{3pt}
+    \small
+    \faMobile \hspace{.5pt} \href{tel:447518630975}{+44 075 1863 0975}
+    $|$
+    \faAt \hspace{.5pt} \href{mailto:info@diomidis.net}{info@diomidis.net}
+    $|$
+    \faLinkedinSquare \hspace{.5pt} \href{https://www.linkedin.com/in/diomidis-anadiotis/}{LinkedIn}
+    $|$
+    \faGithub \hspace{.5pt} \href{https://github.com/diomidis}{GitHub}
+    $|$
+    \faGlobe \hspace{.5pt} \href{https://diomidis.net}{diomidis.net}
+    $|$
+    \faMapMarker \hspace{.5pt} \href{}{E14 0LW, London}
+\end{center}
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+%-----------SUMMARY-----------------
+\section{Summary}
+\small{
+  A methodical and well-organized software engineer with strong analytical and problem-solving skills, experienced in all phases of software development life-cycle, 
+  including requirements gathering, design, deployment, and maintenance. Proficient in multiple programming languages such as C\#, JavaScript, and SQL, with a specialization 
+  in backend development focused on system efficiency, scalability, and maintainability. Skilled in designing and managing complex software solutions with expertise in Microsoft's open source stack and cloud-native applications.
+  Knowledgeable in microservices architecture and systems design, with a proficiency in DevOps practices, especially in Azure environments, and a range of testing methodologies. 
+  Eager and ready to explore and adopt other OO and non-OO modern stacks.
+} \vspace{-5pt}
+
+
+%----------- WORK EXPERIENCE -----------
+%-----------EXPERIENCE-----------------
+\section{Experience}
+  \resumeSubHeadingListStart
+  
+    \resumeSubheading
+      {\href{https://www.arnoldclark.com/about-us}{Arnold Clark}}{Glasgow, UK - Remote}
+      {Software Engineer}{Dec 2021 - Present}
+      \resumeItemListStart
+        \resumeItem{}
+        {Worked on backend and full stack projects from small stand-alone systems to multi-user, n-tier business-critical enterprise systems from inception to MVP release. 
+        Part of the cross functional Aftersales Team with a focus on development and maintenance of in-house and highly available and scalable customer-facing applications. 
+        Due to the competitive nature of the automotive industry I cannot divulge too much information regarding the key performance metrics of the digital aftersales business of the company.}
+        \resumeItem{}
+        {As part of my role I collaborated with the broader team to collectively ensure appropriate engineering decisions are made to factor in technical debt, systems design, stability/reliability, 
+        monitoring/observability and business needs. Additionaly I contributed for the refactoring of complex systems or problems when it was warranted and strived to make pragmatic trade-offs between 
+        the ideal solutions and technical debt including on planning how to repay it. Participated in debugging complex production issues at speed as part of a team, or leading the resolution of 
+        critical or major incidents for the our in-house applications.
+}
+        \resumeItem{}
+          {Supported and mentored junior team members and placement students with their daily tasks and their long term goals, 
+          helping them to deliver their work on time and training them by writing technical guides and chairing 'lunch and learn' sessions for hands-on demonstrations.}
+          \resumeItem{}
+           {Dedicated in and out of working hours time in maintenance supporting go-live projects by liaising with customers to troubleshoot their issues and providing solutions and bug fixes to deliver projects on
+          time.}
+          \resumeItemListEnd
+          \vspace{3mm}
+    \resumeSubSubheading
+     {Associate Software Engineer (Hybrid)}{Dec 2019 - Dec 2021}
+     \resumeItemListStart
+       \resumeItem{}
+        {Development for new internal and public facing systems, dealing with legacy systems, represent my team at several meetings with various business stakeholders.}
+        \resumeItem{}
+        {Developed multiple new features, including new APIs, new screens, functionality enhancement, on existing large-scale products by writing clean, clear and well-tested code in C\#, JavaScript and SQL.\@ Wrote extensive technical documentation for all the projects I worked on.}
+        \resumeItem{}
+        {Collaborated effectively in various projects with colleagues from other squads and from other departments, such as service desk, product team, DBREs, platform engineering, finance, marketing and more.}
+        \resumeItemListEnd
+        \vspace{3mm}
+        \resumeSubSubheading
+     {Systems Analyst (On Site)}{Dec 2017 - Dec 2019}
+     \resumeItemListStart
+        \resumeItem{}
+          {Analysed and evaluated the current business processeses and systems as part of the Aftersales business support team by understanding the business requirements and translating these into 
+          detailed technical specifications. Assesed system capabilities, identified improvements, proposed and presented technical solutions. 
+          Liaised with both business stakeholders and IT technical and Digital development teams to ensure that the proposed IT solutions align well with the business goals and are feasible from a technical standpoint. 
+          Worked closely with the Aftersales Digital development team, project managers, and other IT stakeholders to troubleshoot any issues and optimize system performance.}
+     \resumeItemListEnd
+     \vspace{3mm}
+
+    \resumeSubheading
+      {City Unity College}{Athens, Greece}
+      {Research Assistant in Cognitive Computing/Computational Psychology}{Jan 2015 - Sep 2015}
+      \resumeItemListStart
+      \resumeItem{}
+      {Participated in cognitive research software development, focusing on the Euclidean Travelling Salesman Problem and utilizing the Eyetribe eye tracker for capturing cognitive processes in real-time. Engaged in selective attention experiments and analyzed data using R and RStudio, creating visualizations and models for cognitive insights. Collaborated in an interdisciplinary team, merging technical and psychological research methods.}
+      \resumeItemListEnd
+      \vspace{3mm}
+
+    \resumeSubSubheading
+      {IT Systems Engineer}{Feb 2012 - Jan 2015}
+      \resumeItemListStart
+      \resumeItem{}
+      {Managed and maintained network infrastructure, administered Windows, Linux Servers and MSQL Server environments. Automated educational courses live streaming and recording tasks using PowerShell and Bash. Developed comprehensive documentation for backup and recovery, supporting compliance audits.}
+      \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
 
 %-----------EDUCATION-----------------
 \section{Education}
   \resumeSubHeadingListStart
     \resumeSubheading
       {University of Glasgow}{Glasgow, UK}
-      {Master of Science in Computer Science; GPA: 4.00}{Aug. 2012--Dec. 2013}
+      {Master of Science in Information Technology}{Sep. 2016--Sep. 2017}
+      \small{Relevant modules include advanced programming, databases, software engineering, systems and networks, software project management, algorithms, data structures and cyber security}
     \resumeSubheading
-      {Birla Institute of Technology and Science}{Pilani, India}
-      {Bachelor of Engineering in Electrical and Electronics; GPA: 3.66 (9.15/10.0)}{Aug. 2008--July. 2012}
+      {City University of Seattle}{Seattle, USA \& Athens, Greece}
+      {Bachelor of Science in Information Systems (ABET Accredited)}{Sept. 2011--June 2016}
+      \small{Relevant modules include computer science, statistical computing, network communications, operating systems, web design and cloud computing, data analytics and IT compliance}
   \resumeSubHeadingListEnd
-%-----------EXPERIENCE-----------------
-\section{Experience}
+
+%--------TECHNICAL SKILLS------------
+\section{Languages, Frameworks \& Tools}
   \resumeSubHeadingListStart
-
-    \resumeSubheading
-      {Google}{Mountain View, CA}
-      {Software Engineer}{Oct 2016 - Present}
-      \resumeItemListStart
-        \resumeItem{Tensorflow}
-          {TensorFlow is an open source software library for numerical computation using data flow graphs; primarily used for training deep learning models. Worked on APIs and performance for training models on Tensor Processing Units (TPU).}
-        \resumeItem{Apache Beam}
-          {Apache Beam is a unified model for defining both batch and streaming data-parallel processing pipelines, as well as a set of language-specific SDKs for constructing pipelines and runners.}
-      \resumeItemListEnd
-      
-% --------Multiple Positions Heading------------
-%    \resumeSubSubheading
-%     {Software Engineer I}{Oct 2014 - Sep 2016}
-%     \resumeItemListStart
-%        \resumeItem{Apache Beam}
-%          {Apache Beam is a unified model for defining both batch and streaming data-parallel processing pipelines}
-%     \resumeItemListEnd
-%    \resumeSubHeadingListEnd
-%-------------------------------------------
-
-    \resumeSubheading
-      {Coursera}{Mountain View, CA}
-      {Senior Software Engineer}{Jan 2014 - Oct 2016}
-      \resumeItemListStart
-        \resumeItem{Notifications}
-          {Service for sending email, push and in-app notifications. Involved in features such as delivery time optimization, tracking, queuing and A/B testing. Built an internal app to run batch campaigns for marketing etc.}
-        \resumeItem{Nostos}
-          {Bulk data processing and injection service from Hadoop to Cassandra and provides a thin REST layer on top for serving offline computed data online.}
-        \resumeItem{Workflows}
-          {Dataduct an open source workflow framework to create and manage data pipelines leveraging reusables patterns to expedite developer productivity.}
-        \resumeItem{Data Collection}
-          {Designed the internal survey and crowd sourcing platform which allowed for creating various tasks for crowd sourcing or embedding surveys across the Coursera platform.}
-        \resumeItem{Dev Environment}
-          {Analytics environment based on docker and AWS, standardized the python and R dependencies. Wrote the core libraries that are shared by all data scientists.}
-        \resumeItem{Data Warehousing}
-          {Setup, schema design and management of Amazon Redshift. Built an internal app for access to the data using a web interface. Dataduct integration for daily ETL injection into Redshift.}
-        \resumeItem{Recommendations}
-          {Core service for all recommendation systems at Coursera, currently used on the homepage and throughout the content discovery process. Worked on both offline training and online serving.}
-        \resumeItem{Content Discovery}
-          {Improved content discovery by building a new onboarding experience on coursera. Using this to personalize the search and browse experience. Also worked on ranking and indexing improvements.}
-        \resumeItem{Course Dashboards}
-          {Instructor dashboards and learner surveying tools, which helped instructors run their class better by providing data on Assignments and Learner Activity.}
-      \resumeItemListEnd
-
-    \resumeSubheading
-      {Lucena Research}{Atlanta, GA}
-      {Data Scientist}{Summer 2012 and 2013}
-      \resumeItemListStart
-        \resumeItem{Portfolio Management}
-          {Created models for portfolio hedging,  portfolio optimization and price forecasting. Also creating a strategy backtesting engine used for simulating and backtesting strategies.}
-        \resumeItem{QuantDesk}
-          {Python backend for a web application used by hedge fund managers for portfolio management.}
-      \resumeItemListEnd
-
-    \resumeSubheading
-      {Georgia Institute of Technology}{Atlanta, GA}
-      {Research and Teaching Assistant}{Jan 2012 - Dec 2013}
-      \resumeItemListStart
-        \resumeItem{Research Assistant - Machine Learning}
-          {Research on machine learning for portfolio hedging and replication algorithms. Modeling low-risk \& continuous-return strategies. Developed the python library QSTK.}
-        \resumeItem{Teaching Assistant - Computational Investing}
-          {The online course on Coursera, had more than 100,000 students enrolled. It was featured on the 11 Alive News and the Atlanta Journal Constitution. Involved in creating assignment, exams and conducting recitation sessions. Also taught the on-campus version of the course.}
-      \resumeItemListEnd
-
+    \resumeItem{
+      \textbf{Languages}{: C\#, JavaScript, HCL for Terraform, Groovy for Jenkins, HTML, CSS, TSQL, Ansible} \\[1mm]
+      \textbf{Frameworks \& Libraries}{:.NET Core, ASP.NET 4.0+ Legacy, EF Core, React.js, Gatsby} \\[1mm]
+      \textbf{DevOps}{: Azure DevOps, Kubernetes, Docker} \\[1mm]
+      \textbf{Testing}{: Cypress, Newman, NUnit, Integration, Happy Path, SQL Scripts} \\[1mm]
+      \textbf{Databases}{: MSSQL, Redis for caching, Raven, Cosmos DB, State-Transition (Event Store))} \\[1mm]
+      \textbf{Cloud Native Application}{: Building and deploying containerized apps with Docker on Kubernetes on Azure with Azure DevOps} \\[1mm]
+      \textbf{Serverless \& Microservices Architecture}{:Azure Functions, Azure Service Bus} \\[1mm]
+      \textbf{Data Analytics}{: R, Python}
+    }
   \resumeSubHeadingListEnd
-
-
-%-----------PROJECTS-----------------
-\section{Projects}
-  \resumeSubHeadingListStart
-    \resumeSubItem{QuantSoftware Toolkit}
-      {Open source python library for financial data analysis and machine learning for finance.}
-    \resumeSubItem{Github Visualization}
-      {Data Visualization of Git Log data using D3 to analyze project trends over time.}
-    \resumeSubItem{Recommendation System}
-      {Music and Movie recommender systems using collaborative filtering on public datasets.}
-    \resumeSubItem{Mac Setup}
-      {Book that gives step by step instructions on setting up developer environment on Mac OS.}
-  \resumeSubHeadingListEnd
-
-%
-%--------PROGRAMMING SKILLS------------
-%\section{Programming Skills}
-%  \resumeSubHeadingListStart
-%    \item{
-%      \textbf{Languages}{: Scala, Python, Javascript, C++, SQL, Java}
-%      \hfill
-%      \textbf{Technologies}{: AWS, Play, React, Kafka, GCE}
-%    }
-%  \resumeSubHeadingListEnd
-
 
 %-------------------------------------------
 \end{document}
