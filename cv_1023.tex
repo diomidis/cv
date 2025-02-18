@@ -17,13 +17,14 @@
 \usepackage{fancyhdr}
 \usepackage[english]{babel}
 \usepackage{tabularx}
+\usepackage{pgffor}
 \usepackage{hyphenat}
 \usepackage{fontawesome}
 \usepackage{xcolor}
 \usepackage{changepage}
 \usepackage{geometry}
 \input{glyphtounicode}
-
+\usepackage{libertine}
 
 %---------- FONT OPTIONS ----------
 % sans-serif
@@ -36,7 +37,6 @@
 % \usepackage{CormorantGaramond}
 % \usepackage{charter}
 
-
 \pagestyle{fancy}
 \fancyhf{} % clear all header and footer fields
 \renewcommand{\headrulewidth}{0pt}
@@ -45,8 +45,8 @@
 % Set margins to default
 \usepackage{geometry}
 \geometry{
-  left=1in,   % Standard left margin
-  right=1in,  % Standard right margin
+  left=0.5in,   % Standard left margin
+  right=0.5in,  % Standard right margin
   top=0.5in,    % Standard top margin
   bottom=1in, % Standard bottom margin
   headheight=14pt, % Standard header height
@@ -63,6 +63,9 @@
   \vspace{-4pt}\scshape\raggedright\large
 }{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
 
+\titleformat{name=\section,numberless}[block]{\centering\scshape\large}{}{0em}{}
+\newcommand{\centeredsection}[1]{\section*{\centering #1}}
+
 % Ensure that generate pdf is machine readable/ATS parsable
 \pdfgentounicode=1
 
@@ -72,6 +75,12 @@
 \newcommand{\resumeItem}[1]{
   \item\small{
     {#1 \vspace{-1pt}}
+  }
+}
+
+\newcommand{\resumeItemTight}[1]{
+  \item\small{
+    {#1 \vspace{-5pt}}
   }
 }
 
@@ -117,6 +126,17 @@
     \end{tabular*}\vspace{-7pt}
 }
 
+\newcommand{\resumeCenteredSection}[1]{
+  \section*{\centerline{#1}}
+  \vspace{-8pt}
+}
+
+\newcommand{\resumeItemColumns}[1]{
+  \begin{tabularx}{\textwidth}{>{\centering\arraybackslash}X >{\centering\arraybackslash}X >{\centering\arraybackslash}X}
+    #1
+  \end{tabularx}
+}
+
 \newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
 
 \renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
@@ -135,8 +155,8 @@
 
 \begin{adjustwidth}{-0.2in}{-0.2in}
   \begin{center}
-      \textbf{\LARGE \scshape Diomidis Anadiotis} \\ \vspace{3pt}
-      \small
+    {\textbf{\LARGE \scshape Diomidis Anadiotis}} \\ \vspace{3pt}
+    \small
       \faMobile \hspace{.5pt} \href{tel:447518630975}{+44 075 1863 0975}
       $|$
       \faAt \hspace{.5pt} \href{mailto:info@diomidis.net}{info@diomidis.net}
@@ -158,14 +178,39 @@
 \renewcommand{\footrulewidth}{0pt}
 
 %-----------SUMMARY-----------------
-\section{Summary}
+\resumeCenteredSection{Summary}
 \small{
-  A methodical and well-organized London based Mid-Senior software engineer with strong analytical and problem-solving skills, experienced in all phases of software development life-cycle, 
-  including requirements gathering, design, deployment, and maintenance. Experienced with stakeholder management for internal clients and with leading developemnt efforts with junior developers. Always eager to knowledge share, create accurate documentation and mentor.
-  Proficient in C\#/.NET stack and SQL, with a specialization 
-  in backend development focused on system efficiency, scalability, and maintainability. Skilled in managing legacy and designing modern complex software solutions with expertise in cloud-native applications.
-  Knowledgeable in microservices architecture and systems design, with a proficiency in DevOps practices, especially in Azure environments. Actively seeking a working environment that will allow me to use my people, generalist and technical skills to contribute on a range of different projects and efforts.
+  An experienced Principal Consultant leading programmes and projects to deliver cutting-edge solutions at the intersection of Financial Services and Data Science. Proven track record in stakeholder management and leading data analytics and data science teams. With previous hands-on expertise in developing machine learning models in production and excellent interpersonal and communication skills, is perfectly equipped to grasp and articulate technical, financial, and conceptual ideas to non-technical audiences. Proficient in cloud technologies (Azure, GCP, AWS) with a commitment to lifelong learning and staying abreast of emerging technologies. A versatile professional blending technical prowess with strong soft skills for exceptional contributions. 
 } \vspace{-5pt}
+
+\resumeCenteredSection{Areas of Expertise}
+\resumeItemColumns{
+  Data Science & Machine Learning & Artificial Intelligence \\
+  Tech and Team Leadership & Research & Deep Learning \\
+  Data Modelling & Data Visualisation & Statistics \\
+  Python & R & AWS \\
+  Azure & Google Cloud & People Management
+}
+
+\resumeCenteredSection{Key Achievements}
+\resumeItemListStart
+    \resumeItemTight{1}
+    \resumeItemTight{2}
+    \resumeItemTight{3}
+    \resumeItemTight{4}
+    \resumeItemTight{5}
+    \resumeItemListEnd
+    
+  
+\resumeCenteredSection{Overview}
+\resumeItemListStart
+
+    \resumeItemTight{1}
+    \resumeItemTight{2}
+    \resumeItemTight{3}
+    \resumeItemTight{4}
+    \resumeItemTight{5}
+    \resumeItemListEnd
 
 
 %----------- WORK EXPERIENCE -----------
@@ -244,7 +289,7 @@
       {Master of Science in Information Technology (PgCert)}{Sep. 2016--Sep. 2017}
       \small{Relevant modules include advanced programming, databases, software engineering, systems and networks, software project management, algorithms, data structures and cyber security}
     \resumeSubheading
-      {City University of Seattle}{Seattle, USA \& Athens, Greece}
+      {City University of Seattle}{Seattle, USA \& Athens, Greece}t
       {Bachelor of Science in Information Systems (ABET Accredited)}{Sept. 2011--June 2016}
       \small{Relevant modules include computer science, statistical computing, network communications, operating systems, web design and cloud computing, data analytics and IT compliance}
   \resumeSubHeadingListEnd
