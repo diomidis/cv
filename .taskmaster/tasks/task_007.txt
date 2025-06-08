@@ -1,0 +1,98 @@
+# Task ID: 7
+# Title: Develop Job Application Tailoring System
+# Status: pending
+# Dependencies: 2, 3, 5
+# Priority: medium
+# Description: Create a system to customize CV content based on company research from the Job Opportunities folder.
+# Details:
+This task involves:
+1. Implement company research extraction from Job Opportunities folder
+2. Create keyword and skill matching between job requirements and CV content
+3. Develop content prioritization based on job relevance
+4. Build CV customization logic for specific applications
+5. Implement version management for tailored CVs
+
+Implementation approach:
+```python
+class JobApplicationTailor:
+    def __init__(self, obsidian_reader, latex_processor, content_mapper):
+        self.obsidian_reader = obsidian_reader
+        self.latex_processor = latex_processor
+        self.content_mapper = content_mapper
+    
+    def extract_company_research(self, company_name):
+        # Look for company research in Job Opportunities folder
+        company_path = f"Job Opportunities/{company_name}.md"
+        try:
+            research = self.obsidian_reader.read_file(company_path)
+            return self.parse_company_research(research)
+        except FileNotFoundError:
+            return None
+    
+    def parse_company_research(self, research_content):
+        # Extract key information from company research
+        parsed = {
+            'keywords': self.extract_keywords(research_content),
+            'required_skills': self.extract_skills(research_content),
+            'company_values': self.extract_values(research_content),
+            'job_description': self.extract_job_description(research_content)
+        }
+        return parsed
+    
+    def extract_keywords(self, content):
+        # Extract keywords from research content
+        # Use regex or NLP techniques
+        pass
+    
+    def extract_skills(self, content):
+        # Extract required skills from research content
+        pass
+    
+    def extract_values(self, content):
+        # Extract company values from research content
+        pass
+    
+    def extract_job_description(self, content):
+        # Extract job description from research content
+        pass
+    
+    def tailor_cv_for_company(self, company_name):
+        research = self.extract_company_research(company_name)
+        if not research:
+            raise ValueError(f"No research found for {company_name}")
+        
+        # Create a copy of the CV for customization
+        tailored_cv_path = f"{self.latex_processor.cv_path.replace('.tex', '')}_{company_name}.tex"
+        shutil.copy(self.latex_processor.cv_path, tailored_cv_path)
+        tailored_processor = LaTeXCVProcessor(tailored_cv_path)
+        
+        # Customize sections based on company research
+        self.prioritize_experience(tailored_processor, research)
+        self.highlight_relevant_skills(tailored_processor, research)
+        self.customize_summary(tailored_processor, research)
+        
+        # Compile tailored CV
+        tailored_processor.compile_pdf()
+        
+        return tailored_cv_path
+    
+    def prioritize_experience(self, cv_processor, research):
+        # Reorder or emphasize experience items based on relevance
+        pass
+    
+    def highlight_relevant_skills(self, cv_processor, research):
+        # Emphasize skills that match job requirements
+        pass
+    
+    def customize_summary(self, cv_processor, research):
+        # Tailor professional summary to company values and job description
+        pass
+```
+
+# Test Strategy:
+1. Unit tests for company research extraction with sample files
+2. Test keyword and skill extraction with various research formats
+3. Verify CV customization with different company profiles
+4. Test prioritization logic with various experience entries
+5. Validate PDF output for tailored CVs
+6. Integration tests with actual company research documents
