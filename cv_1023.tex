@@ -65,13 +65,16 @@
 \hyphenpenalty=10000
 \hbadness=10000
 
+% Define custom color
+\definecolor{sectioncolor}{HTML}{718093}
+
 % Sections formatting
 \titleformat{\section}{
-  \vspace{-4pt}\scshape\raggedright\large
-}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+  \vspace{-4pt}\scshape\raggedright\large\color{sectioncolor}
+}{}{0em}{}[\color{sectioncolor}\titlerule \vspace{-5pt}]
 
-\titleformat{name=\section,numberless}[block]{\centering\scshape\large}{}{0em}{}
-\newcommand{\centeredsection}[1]{\section*{\centering #1}}
+\titleformat{name=\section,numberless}[block]{\centering\scshape\large\color{sectioncolor}}{}{0em}{}
+\newcommand{\centeredsection}[1]{\section*{\centering \color{sectioncolor}#1}}
 
 % Ensure that generate pdf is machine readable/ATS parsable
 \pdfgentounicode=1
