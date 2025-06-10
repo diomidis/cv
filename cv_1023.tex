@@ -65,8 +65,13 @@
 \hyphenpenalty=10000
 \hbadness=10000
 
-% Define custom color
-\definecolor{sectioncolor}{HTML}{2e86de}
+% Set default text color
+\color{textcolor}
+
+% Define custom colors
+\definecolor{sectioncolor}{HTML}{3498db}  % Clean blue for headings
+\definecolor{namecolor}{HTML}{2c3e50}     % Dark slate blue for name
+\definecolor{textcolor}{HTML}{2c3e50}     % Dark slate blue for main text
 
 % Sections formatting
 \titleformat{\section}{
@@ -165,7 +170,7 @@
 
 \begin{adjustwidth}{-0.2in}{-0.2in}
   \begin{center}
-    {\textbf{\LARGE \scshape Diomidis Anadiotis}} \\ \vspace{3pt}
+    {\textbf{\LARGE \scshape \color{namecolor}Diomidis Anadiotis}} \\ \vspace{3pt}
     \small
     \faMobile \hspace{.5pt} \href{tel:447518630975}{+44 075 1863 0975}
     $|$
