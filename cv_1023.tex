@@ -23,6 +23,7 @@
 \usepackage{xcolor}
 \usepackage{changepage}
 \usepackage{geometry}
+\usepackage{ragged2e}
 \input{glyphtounicode}
 \usepackage{libertine}
 
@@ -55,8 +56,14 @@
 \urlstyle{same}
 
 \raggedbottom
-\raggedright
+% Remove \raggedright for better justification
 \setlength{\tabcolsep}{0in}
+
+% Better hyphenation and justification
+\tolerance=1
+\emergencystretch=\maxdimen
+\hyphenpenalty=10000
+\hbadness=10000
 
 % Sections formatting
 \titleformat{\section}{
@@ -74,13 +81,13 @@
 
 \newcommand{\resumeItem}[1]{
   \item\small{
-    {#1 \vspace{-1pt}}
+    \justifying{#1} \vspace{-1pt}
   }
 }
 
 \newcommand{\resumeItemTight}[1]{
   \item\small{
-    {#1 \vspace{-5pt}}
+    \justifying{#1} \vspace{-5pt}
   }
 }
 
@@ -180,25 +187,24 @@
 %-----------SUMMARY-----------------
 \resumeCenteredSection{Professional Summary}
 \small{
-  Senior Software Engineer with 7+ years building scalable enterprise systems at Europe's largest independent automotive company. Led architecture design and implementation of customer-facing applications serving 221k+ monthly users, delivering £30M+ business value through technical innovation. Expert in C\#/.NET microservices architecture, cloud infrastructure (Azure/AWS), and DevOps practices. Proven technical leader with experience mentoring development teams, driving cross-functional collaboration, and translating complex business requirements into robust, maintainable solutions. Strong background in CQRS/event sourcing patterns, legacy system modernization, and enterprise-scale system integration.
+\justifying
+An experienced Software Engineer with senior level responsibilities leading technical initiatives to deliver cutting-edge enterprise systems at Europe's largest independent automotive company. Proven track record in stakeholder management and leading cross-functional development efforts across complete project lifecycles. With extensive hands-on expertise in architecting scalable microservices solutions and excellent technical communication skills, is perfectly equipped to translate complex business requirements into robust, maintainable systems serving hundreds of thousands of users. With extensive hands-on expertise in architecting scalable microservices systems in production and excellent interpersonal and communication skills, is perfectly equipped to grasp and articulate technical, business, and architectural concepts to non-technical stakeholders. Proficient in cloud technologies and modern development practices as well as legacy systems modernisation, with a commitment to lifelong learning and staying abreast of emerging technologies. A versatile professional blending deep technical expertise with strong leadership capabilities for exceptional business contributions.
 } \vspace{-5pt}
 
 \resumeCenteredSection{Areas of Expertise}
 \resumeItemColumns{
-  Backend Development & System Architecture & Technical Leadership \\
-  Microservices Design & Cloud Infrastructure & DevOps Practices \\
-  C\# .NET Development & Database Design & API Integration \\
-  Stakeholder Management & Team Mentoring & Agile Methodologies \\
-  Azure \& AWS & Kubernetes \& Docker & Event-Driven Architecture
+  Backend Development & System Architecture & TS/React \\
+  Microservices Design & Cloud Infrastructure & Legacy System Modernization \\
+  C\# .NET Development & Event-Driven Architecture & Stakeholder Management \\
+  DevOps \& CI/CD & Database Design & Team Mentoring \\
+  Azure & Kubernetes \& Docker & CQRS/Event Sourcing
 }
 
 \resumeCenteredSection{Key Achievements}
 \resumeItemListStart
 \resumeItemTight{Delivered mobile application launch in 2024 serving 221,000+ monthly active users with high availability and scalability}
 \resumeItemTight{Architected omni-channel service booking platform processing 220,000+ annual bookings via web and mobile applications}
-\resumeItemTight{Led OWA system implementation generating 360,000+ work approvals with 40\% approval rate, delivering £30M business value over 2 years}
 \resumeItemTight{Designed and implemented resource management system supporting 200+ branches across the country with integrated pricing matrix and recommendation engine}
-\resumeItemTight{Increased vehicle service work sales conversion rates to double-digit percentage year-over-year through system optimization and integration}
 \resumeItemListEnd
 
 
@@ -212,35 +218,42 @@
 {\href{https://www.arnoldclark.com/about-us}{Arnold Clark}}{Glasgow, UK --Remote}
 {Software Engineer}{Dec 2021--Present}
 \resumeItemListStart
-\resumeItem{}
-{Architected and delivered customer-facing applications serving hundreds of thousands of users for Europe's largest independent automotive company. Led full-stack development from inception to MVP release on business-critical enterprise systems, including mobile application launch achieving 221k monthly active users and omni-channel service booking platform processing 220k+ annual bookings.
+\resumeItem{
+Co-architected and delivered customer-facing applications serving hundreds of thousands of users. Led full-stack development of vertical features which led to 17\% of service bookings and 15\% of service hours sold and omni-channel service booking platform processing 220k+ annual bookings via React-based web interface and mobile apps.
 }
-\resumeItem{}
-{Architected and implemented microservices architecture using CQRS and event sourcing patterns, designing 12+ independent services handling 50k+ daily transactions. Led monolith-to-microservices migration strategy, reducing system coupling and improving deployment frequency from weekly to daily releases. Collaborated with cross-functional teams including Product, DevOps, and QA to ensure engineering decisions balanced technical debt, system stability, monitoring requirements, and business objectives. Established service mesh communication patterns and implemented distributed tracing for enhanced observability.
+\resumeItem{
+Designed and implemented event-driven microservices architecture using CQRS with MediatR, Azure Service Bus with MassTransit for reliable messaging, and .NET 6/8 services handling 50k+ daily transactions. Led monolith-to-microservices migration strategy for legacy workshop management system, reducing system coupling and improving availability and deployment frequency. Established service mesh communication patterns and implemented distributed tracing with comprehensive observability across 12+ independent services.
 }
-\resumeItem{}
-{Mentored 8+ junior developers and placement students through structured technical guidance, code reviews, and knowledge sharing sessions. Authored comprehensive technical documentation and conducted biweekly 'lunch and learn' demonstrations on advanced topics including microservices patterns, testing strategies, and performance optimization. Built team capability through hands-on training resulting in 100% junior developer retention and 2 internal promotions.}
-\resumeItem{}
-{Led cross-functional development teams of 3-5 engineers across complete project lifecycles, from architectural planning to production deployment. Owned complete workstreams overseeing junior developers and coordinating deliverables on tight deadlines. Managed go-live projects by liaising with customers and stakeholders, providing rapid troubleshooting and solution delivery. Established team standards for code quality, testing practices, and deployment procedures that reduced production incidents by 40%.}
-\resumeItem{}
-{Integrated with 3rd party vendors and internal systems to deliver seamless omni-channel experiences connecting service bookings, payment processing, and customer communications. Implemented Infrastructure as Code (Terraform) for on-premises and cloud deployments, reducing deployment time from 4 hours to 15 minutes. Developed integration solutions providing technicians access to vehicle-specific data including wiring diagrams and engine schematics, contributing to double-digit year-over-year improvement in service sales conversion rates.}
+\resumeItem{
+Architected enterprise-scale system integration layer connecting customer booking platform with workshop management and legacy CRM \& financial systems, enabling real-time data synchronization across 150+ business entities. Implemented event-driven data flows processing booking confirmations, resource allocation, and technician scheduling through Azure Service Bus, ensuring data consistency and business process automation from customer booking to vehicle handback.
+}
+\resumeItem{
+Designed, implemented and maintained CI/CD pipelines with Docker containerization and Kubernetes orchestration. Established IaC using Terraform for both cloud and on-premises deployments, automated integration testing strategies with TestContainers and frontend e2e and component testing with Cypress. Implemented comprehensive monitoring and alerting strategies with NewRelic.
+}
+\resumeItem{
+Developed integration solutions providing workshop technicians real-time access to vehicle-specific data, automated resource management workflows, and streamlined customer communication processes, contributing to double-digit year-over-year improvement in service sales conversion rates.
+}
 \resumeItemListEnd
 \vspace{3mm}
 \resumeSubSubheading
-{Associate Software Engineer (Hybrid)}{Dec 2019--Dec 2021}
+{Associate Software Engineer}{Dec 2019--Dec 2021}
 \resumeItemListStart
-\resumeItem{}
-{Developed multiple features for large-scale internal and public-facing systems, writing clean, SOLID-principles oriented, and well-tested code. Created new APIs, enhanced existing functionality, and maintained legacy systems while ensuring high code quality and comprehensive documentation.}
-\resumeItem{}
-{Collaborated effectively across departments including service desk, product teams, database reliability engineers, platform engineering, finance, marketing, and 3rd party vendors. Represented technical team in stakeholder meetings and translated business requirements into technical specifications.}
+\resumeItem{
+Developed multiple features for large-scale internal and public-facing systems, writing clean, SOLID-principles oriented, and well-tested code. Created new APIs, enhanced existing functionality, and maintained legacy systems while ensuring high code quality and comprehensive documentation.
+}
+\resumeItem{
+Collaborated effectively across departments including service desk, product teams, database reliability engineers, platform engineering, finance, marketing, and 3rd party vendors. Represented technical team in stakeholder meetings and translated business requirements into technical specifications.
+}
 \resumeItemListEnd
 \resumeSubSubheading
-{Systems Analyst (On Site)}{Dec 2017--Dec 2019}
+{Systems Analyst}{Dec 2017--Dec 2019}
 \resumeItemListStart
-\resumeItem{}
-{Analyzed and evaluated business processes and systems as part of Aftersales business support team. Translated business requirements into detailed technical specifications, assessed system capabilities, identified improvements, and proposed technical solutions aligned with business goals.}
-\resumeItem{}
-{Coordinated between business stakeholders and IT development teams to ensure proposed solutions were technically feasible and business-aligned. Worked closely with Digital development teams, project managers, and IT stakeholders to troubleshoot issues and optimize system performance.}
+\resumeItem{
+Analyzed and evaluated business processes and systems as part of Aftersales business support team. Translated business requirements into detailed technical specifications, assessed system capabilities, identified improvements, and proposed technical solutions aligned with business goals.
+}
+\resumeItem{
+Coordinated between business stakeholders and IT development teams to ensure proposed solutions were technically feasible and business-aligned. Worked closely with Digital development teams, project managers, and IT stakeholders to troubleshoot issues and optimize system performance.
+}
 \resumeItemListEnd
 \vspace{3mm}
 
@@ -248,16 +261,18 @@
 {City Unity College}{Athens, Greece}
 {Research Assistant in Cognitive Computing/Computational Psychology}{Jan 2015--Sep 2015}
 \resumeItemListStart
-\resumeItem{}
-{Developed cognitive research software focusing on the Euclidean Travelling Salesman Problem utilizing Eyetribe eye tracker for real-time cognitive process capture. Conducted selective attention experiments and analyzed data using R and RStudio, creating visualizations and models for cognitive insights in interdisciplinary research environment.}
+\resumeItem{
+Developed cognitive research software focusing on the Euclidean Travelling Salesman Problem utilizing Eyetribe eye tracker for real-time cognitive process capture. Conducted selective attention experiments and analyzed data using R and RStudio, creating visualizations and models for cognitive insights in an interdisciplinary research environment.
+}
 \resumeItemListEnd
 \vspace{3mm}
 
 \resumeSubSubheading
 {IT Systems Engineer}{Feb 2012--Jan 2015}
 \resumeItemListStart
-\resumeItem{}
-{Managed network infrastructure and administered Windows/Linux servers and MSSQL Server environments. Automated educational course live streaming and recording using PowerShell and Bash scripting. Developed comprehensive backup and recovery documentation supporting compliance audits.}
+\resumeItem{
+Managed network infrastructure and administered Windows \& Linux application servers and MSSQL Server environments. Automated educational course live streaming and recording using PowerShell and Bash scripting. Developed comprehensive backup and recovery documentation supporting compliance audits.
+}
 \resumeItemListEnd
 
 \resumeSubHeadingListEnd
@@ -268,11 +283,11 @@
 \resumeSubheading
 {University of Glasgow}{Glasgow, UK}
 {Master of Science in Information Technology (PgCert)}{Sep 2016--Sep 2017}
-\small{Relevant modules include advanced programming, databases, software engineering, systems and networks, software project management, algorithms, data structures and cyber security}
+\small{\justifying Relevant modules include advanced programming, databases, software engineering, systems and networks, software project management, algorithms, data structures and cyber security}
 \resumeSubheading
 {City University of Seattle}{Seattle, USA}
 {Bachelor of Science in Information Systems (ABET Accredited)}{Sep 2011--Jun 2016}
-\small{Relevant modules include computer science, statistical computing, network communications, operating systems, web design and cloud computing, data analytics and IT compliance}
+\small{\justifying Relevant modules include computer science, statistical computing, network communications, operating systems, web design and cloud computing, data analytics and IT compliance}
 \resumeSubHeadingListEnd
 
 %--------TECHNICAL SKILLS------------
