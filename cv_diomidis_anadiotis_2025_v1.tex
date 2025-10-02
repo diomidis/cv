@@ -1,0 +1,328 @@
+%-------------------------
+% My resume in Latex
+% Author : Diomidis Anadiotis
+% License : MIT
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{pgffor}
+\usepackage{hyphenat}
+\usepackage{fontawesome}
+\usepackage{xcolor}
+\usepackage{changepage}
+\usepackage{geometry}
+\usepackage{ragged2e}
+\input{glyphtounicode}
+\usepackage{libertine}
+
+%---------- FONT OPTIONS ----------
+% sans-serif
+% \usepackage[sfdefault]{FiraSans}
+% \usepackage[sfdefault]{roboto}
+% \usepackage[sfdefault]{noto-sans}
+% \usepackage[default]{sourcesanspro}
+
+% serif
+% \usepackage{CormorantGaramond}
+% \usepackage{charter}
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Set margins to default
+\usepackage{geometry}
+\geometry{
+left=0.5in, % Standard left margin
+right=0.5in, % Standard right margin
+top=0.5in, % Standard top margin
+bottom=1in, % Standard bottom margin
+headheight=14pt, % Standard header height
+includeheadfoot % Include space for header/footer
+}
+\urlstyle{same}
+
+\raggedbottom
+% Remove \raggedright for better justification
+\setlength{\tabcolsep}{0in}
+
+% Better hyphenation and justification
+\tolerance=1
+\emergencystretch=\maxdimen
+\hyphenpenalty=10000
+\hbadness=10000
+
+% Define custom colors
+\definecolor{sectioncolor}{HTML}{005b96} % Deep blue for headings
+\definecolor{namecolor}{HTML}{005b96} % Deep blue for name
+\definecolor{textcolor}{HTML}{2c3e50} % Dark slate blue for main text
+
+% Set default text color
+\color{textcolor}
+
+% Sections formatting
+\titleformat{\section}{
+\vspace{-4pt}\scshape\raggedright\large\color{sectioncolor}
+}{}{0em}{}[\color{sectioncolor}\titlerule \vspace{-5pt}]
+
+\titleformat{name=\section,numberless}[block]{\centering\scshape\large\color{sectioncolor}}{}{0em}{}
+\newcommand{\centeredsection}[1]{\section*{\centering \color{sectioncolor}#1}}
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+
+\newcommand{\resumeItem}[1]{
+\item\small{
+\justifying{#1} \vspace{-1pt}
+}
+}
+
+\newcommand{\resumeItemTight}[1]{
+\item\small{
+\justifying{#1} \vspace{-5pt}
+}
+}
+
+\newcommand{\resumeSubheading}[4]{
+\item
+\begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+\textbf{#1} & #2 \\
+\textit{\small#3} & \textit{\small #4} \\
+\end{tabular*}\vspace{1mm}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+\item
+\begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+\textit{\small#1} & \textit{\small #2} \\
+\end{tabular*}\vspace{1mm}
+}
+
+
+\newcommand{\resumeEducationHeading}[6]{
+\vspace{-2pt}\item
+\begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+\textbf{#1} & #2 \\
+\textit{\small#3} & \textit{\small #4} \\
+\textit{\small#5} & \textit{\small #6} \\
+\end{tabular*}\vspace{-5pt}
+}
+
+
+\newcommand{\resumeProjectHeading}[2]{
+\vspace{-2pt}\item
+\begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+\small#1 & #2 \\
+\end{tabular*}\vspace{-7pt}
+}
+
+
+\newcommand{\resumeOrganizationHeading}[4]{
+\vspace{-2pt}\item
+\begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+\textbf{#1} & \textit{\small #2} \\
+\textit{\small#3}
+\end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeCenteredSection}[1]{
+\section*{\centerline{#1}}
+\vspace{-8pt}
+}
+
+\newcommand{\resumeItemColumns}[1]{
+\begin{tabularx}{\textwidth}{>{\centering\arraybackslash}X >{\centering\arraybackslash}X >{\centering\arraybackslash}X}
+#1
+\end{tabularx}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%% RESUME STARTS HERE %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+%---------- HEADING ----------
+
+\begin{adjustwidth}{-0.2in}{-0.2in}
+\begin{center}
+{\textbf{\LARGE \scshape \color{namecolor}Diomidis Anadiotis}} \\ \vspace{3pt}
+\small
+\faMobile \hspace{.5pt} \href{tel:447518630975}{+44 075 1863 0975}
+\(|\)
+\faAt \hspace{.5pt} \href{mailto:info@diomidis.net}{info@diomidis.net}
+\(|\)
+\faLinkedinSquare \hspace{.5pt} \href{https://www.linkedin.com/in/diomidis-anadiotis/}{LinkedIn}
+\(|\)
+\faGithub \hspace{.5pt} \href{https://github.com/diomidis}{GitHub}
+\(|\)
+\faGlobe \hspace{.5pt} \href{https://diomidis.net}{diomidis.net}
+\(|\)
+\faMapMarker \hspace{.5pt} \href{}{E14 0LW, London}
+\end{center}
+\end{adjustwidth}
+
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+%-----------SUMMARY-----------------
+\resumeCenteredSection{Professional Summary}
+\small{
+\justifying
+Customer-focused software engineer with proven expertise in technical initiatives to deliver robust, scalable and maintainable enterprise systems at Europe's largest independent automotive company. Specialised in architecting event-driven microservices using C\#/.NET Core, CQRS patterns, and Azure cloud technologies.
+Demonstrated success in co-leading cross functional team efforts and mentoring engineers with excellent interpersonal and communication skills while delivering high-quality software at scale-managing complex product catalogs.
+Strong background in building omnichannel fullstack customer experiences.
+Experience includes legacy systems modernisation into modern cloud-native architectures while maintaining availability for mission-critical customer, internal and integration applications.
+}
+
+\resumeCenteredSection{Technical Expertise}
+\resumeItemColumns{
+.NET \& .NET Framework & CQRS with MediatR & React.js/TypeScript \\
+Azure Service Bus & Docker/Kubernetes & TDD/Cypress Testing \\
+Event-Driven Microservices & SQL Server/Redis & MassTransit Messaging \\
+Domain-Driven Design & RESTful APIs/GraphQL & Data Analysis \& Interpretation
+}
+
+%----------- WORK EXPERIENCE -----------
+\section{Experience}
+\resumeSubHeadingListStart
+
+\resumeSubheading
+{\href{https://www.arnoldclark.com/about-us}{Arnold Clark}}{London, UK --Remote}
+{Senior Software Engineer}{Jan 2025--Now}
+\resumeItemListStart
+\resumeItem{
+Co-led complete modernisation of customer-facing booking platform serving 220k monthly active users that improved customer journey conversion by 17\%, directly contributing to £15M+ in annual digital revenue growth.
+}
+\resumeItem{
+Complete ownership of availability feature showing real-time appointment slots based on product catalog availability, reducing customer friction by 35-50\% (page bounces) and increasing bookings by 18.5\% (3k additional bookings in 6 weeks). Improved conversion rate by a further 7\% through data-driven UX optimization, eliminating multi-step navigation frustration while maintaining sub-second response times at scale.
+}
+\resumeItem{
+Designed and implemented event-driven microservices using CQRS with MediatR, .NET Core 8, and Azure Service Bus, handling 50,000+ daily transactions with heavy background processing. Established distributed caching with Redis and implemented auto-scaling strategies in Kubernetes to handle peak loads.
+}
+\resumeItem{
+Contributed heavily in real-time inventory synchronization system managing 10k products across 200+ locations, processing updates within milliseconds. Refactored legacy product and service branch availability engine with event-sourced (migrating from EventStore to Service Bus) ensuring accurate availability levels across web, mobile, and in-store channels.
+}
+\resumeItem{
+Mentored junior engineers in SOLID principles, TDD practices, refactoring, green field development and cloud architecture patterns. Collaborated directly with product owners, UX designers, QA and business stakeholders.
+}
+\resumeItemListEnd
+\vspace{3mm}
+\resumeSubSubheading
+{Software Engineer}{Dec 2021--Jan 2025}
+
+\resumeItemListStart
+\resumeItem{
+Proposed, designed, and migrated third-party integration from resource-intensive database jobs to a high-performance event processing application, replacing legacy stored procedures and achieving 5x faster processing of millions of records while introducing comprehensive auditing capabilities; implemented using Hangfire for job scheduling, MassTransit for messaging, and a configuration-driven architecture supporting both direct database operations and service bus integration with enterprise-grade error handling and concurrent execution prevention}
+\resumeItem{
+Designed and developed RESTful APIs serving React frontends and internal department-wide applications, implementing layered architecture with clean separation of concerns; built reusable component libraries and maintained comprehensive API documentation using Swagger/OpenAPI specifications}
+\resumeItem{
+Designed and optimized SQL Server schemas and implemented persistence-based solutions for unstructured availability and product data types. Created efficient indexing strategies and query optimization reducing database response times by 60\% in some cases.
+}
+\resumeItemListEnd
+\vspace{3mm}
+\resumeSubSubheading
+{Associate Software Engineer}{Dec 2019--Dec 2021}
+\resumeItemListStart
+\resumeItem{
+Developed comprehensive test suites using NUnit and Cypress for end-to-end testing. Implemented automated testing strategies with TestContainers ensuring code quality across 20+ microservices and legacy codebases. Practiced test-first development approach from business requirements through to production code, whenever possible.
+}
+\resumeItem{
+Worked closely with UX/UI teams, product managers, and business stakeholders to deliver small and medium-sized features. Dived into legacy codebases and located refactoring opportunities. Participated in regular Tech Development days, hackathons, and knowledge-sharing sessions to drive engineering excellence.
+}
+\resumeItemListEnd
+\resumeSubSubheading
+{Systems Analyst}{Dec 2017--Dec 2019}
+\resumeItemListStart
+\resumeItem{
+Analyzed and modeled complex business domains, translating requirements into technical specifications. Worked with aftersales development team to understand product lifecycle management and customer journey optimization opportunities.
+}
+\resumeItemListEnd
+\vspace{3mm}
+
+\resumeSubheading
+{City Unity College}{Athens, Greece}
+{Research Assistant in Cognitive Computing}{Jan 2015--Sep 2015}
+\resumeItemListStart
+\resumeItem{
+Developed cognitive research software focusing on the Euclidean Travelling Salesman Problem utilizing Eyetribe eye tracker
+for real-time cognitive process capture. Conducted selective attention experiments and analyzed data using R and RStudio,
+creating visualizations and models for cognitive insights in an interdisciplinary research environment.}
+\resumeItemListEnd
+\vspace{3mm}
+
+\resumeSubSubheading
+{IT Systems Engineer}{Feb 2012--Jan 2015}
+\resumeItemListStart
+\resumeItem{
+Managed cloud infrastructure and automated deployment processes using PowerShell and Bash scripting. Administered Windows/Linux servers and SQL Server environments supporting high-availability applications.
+}
+\resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+%-----------EDUCATION-----------------
+\section{Education}
+\resumeSubHeadingListStart
+\resumeSubheading
+{University of Glasgow}{Glasgow, UK}
+{MSc in Information Technology}{Sep 2016--Sep 2017}
+\small{\justifying Core modules: Advanced Programming, Software Engineering, Cloud Computing, Algorithms \& Data Structures, Agile Project Management}
+\resumeSubheading
+{City University of Seattle}{Seattle, USA}
+{BSc in Information Systems - Systems Engineering (ABET Accredited)}{Sep 2011--Jun 2016}
+\small{\justifying Relevant modules include computer science, statistical computing, network communications, operating systems, web design and
+cloud computing, data analytics and IT compliance}
+\resumeSubHeadingListEnd
+
+\section{Technical Skills}
+\resumeSubHeadingListStart
+\resumeItem{
+\textbf{Languages \& Backend Frameworks}{: C\#, .NET Core 6/8, .NET Framework, .NET Standard, R} \\[1mm]
+\textbf{Frontend \& Web Technologies}{: React.js, TypeScript, JavaScript (ES6+), Redux, Next.js, HTML5, CSS3} \\[1mm]
+\textbf{Architecture \& Design Patterns}{: Microservices, CQRS, Event Sourcing, Domain-Driven Design, Event-Driven Architecture} \\[1mm]
+\textbf{Azure Cloud Services}{: Functions, Service Bus, App Services, Application Insights, DevOps Pipelines} \\[1mm]
+\textbf{Data Storage}{: SQL Server, MySQL, RavenDB, EventStore, Redis, EF} \\[1mm]
+\textbf{Messaging \& APIs}{: Azure Service Bus, MassTransit, RabbitMQ, Kafka, RESTful APIs, GraphQL, gRPC} \\[1mm]
+\textbf{DevOps \& Infrastructure}{: Docker, Kubernetes, Terraform, CI/CD (Jenkins for on-prem, Azure DevOps), GitHub Actions} \\[1mm]
+\textbf{Testing \& Quality Assurance}{: TDD, Unit/Integration Testing, Cypress, Performance Testing} \\[1mm]
+\textbf{Monitoring \& Observability}{: New Relic, Application Insights, ELK Stack, Distributed Tracing} \\[1mm]
+}
+\resumeSubHeadingListEnd
+
+%--------Volunteering------------
+\section{Volunteering}
+\resumeSubHeadingListStart
+\resumeItem{
+Served as openSUSE Project Advocate (2010-2014) promoting Linux distribution across Greece and Europe through translation, documentation, and bug fixing; volunteered at FOSDEM (2011-2014) and hosted Novell SUSE booth at LinuxCon Europe 2012 conference, contributing to open-source community engagement and technical evangelism}
+\resumeSubHeadingListEnd
+
+%-------------------------------------------
+\end{document}

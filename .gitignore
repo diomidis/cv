@@ -1,6 +1,13 @@
-cv_1023.log
-cv_1023.aux
-cv_1023.fdb_latexmk
-cv_1023.fls
-cv_1023.out
-cv_1023.synctex.gz
+# LaTeX build artifacts
+*.aux
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.synctex.gz
+
+# System files
+.DS_Store
+*.swp
+*.swo
+*~

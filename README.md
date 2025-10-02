@@ -1,49 +1,57 @@
 # CV Repository
 
-This repository contains:
-- **LaTeX CV Template**: Modern, ATS-friendly CV in LaTeX format
-- **TaskMaster Automation Project**: 12-task development plan for Obsidian-CV integration
-- **Git Workflow**: Version-controlled CV iterations with branch-based development
-- **Automated Compilation**: LaTeX build system for PDF generation
+This repository contains a professional LaTeX CV template with modern, ATS-friendly formatting. Built with clean design principles and professional typography for software engineering positions.
 
 ## 🚀 Quick Start
 
 ### Prerequisites
-- LaTeX distribution (TeX Live, MiKTeX, or MacTeX)
-- Git
-- Obsidian (for integration features)
-- Python 3.8+ (for automation development)
+
+- **LaTeX distribution**: BasicTeX, TeX Live, MiKTeX, or MacTeX
+  - On macOS: `brew install --cask basictex`
+- **Git** for version control
+- **VS Code** with LaTeX Workshop extension (recommended)
 
 ### Basic Usage
+
 ```bash
 # Clone repository
 git clone <repository-url>
 cd cv
 
-# Compile CV
-pdflatex cv_1023.tex
+# Compile CV using latexmk (recommended)
+latexmk -pdf cv_diomidis_anadiotis_2025_v1.tex
+
+# Or use pdflatex directly
+pdflatex cv_diomidis_anadiotis_2025_v1.tex
 
 # View generated PDF
-open cv_1023.pdf
+open cv_diomidis_anadiotis_2025_v1.pdf
 ```
 
 ## 📁 Repository Structure
 
 ```
-├── cv_1023.tex              # Main LaTeX CV source
-├── cv_1023.pdf              # Compiled PDF output
-├── .taskmaster/             # Automation project
-│   ├── tasks/               # TaskMaster task definitions
-│   │   ├── tasks.json       # Main task configuration
-│   │   └── task_*.txt       # Individual task files
-│   └── reports/             # Analysis and progress reports
-├── .gitignore               # LaTeX build files exclusion
-└── README.md                # This file
+├── cv_diomidis_anadiotis_2025_v1.tex    # Main LaTeX CV source
+├── cv_diomidis_anadiotis_2025_v1.pdf    # Compiled PDF output
+├── .gitignore                           # LaTeX build files exclusion
+└── README.md                            # This documentation
+```
+
+### Build Artifacts (Git-ignored)
+
+```
+├── *.aux                    # LaTeX auxiliary files
+├── *.fdb_latexmk           # Latexmk database
+├── *.fls                   # File list
+├── *.log                   # Compilation logs
+├── *.out                   # Hyperref outputs
+└── *.synctex.gz            # SyncTeX files
 ```
 
 ## 📄 CV Features
 
 ### Professional Sections
+
 - **Professional Summary**: Concise value proposition with quantified achievements
 - **Areas of Expertise**: Visual skill matrix for quick scanning
 - **Key Achievements**: Quantified business impact and technical accomplishments
@@ -52,118 +60,76 @@ open cv_1023.pdf
 - **Technical Skills**: Categorized technical competencies
 
 ### Design Features
+
 - ✅ **ATS-Friendly**: Machine-readable formatting for applicant tracking systems
 - ✅ **Modern Layout**: Clean, professional design with clear visual hierarchy
 - ✅ **Responsive Text**: Optimized for both digital and print formats
 - ✅ **FontAwesome Icons**: Professional contact information presentation
 - ✅ **Quantified Metrics**: Data-driven achievement presentation
 
-## 🔧 TaskMaster Automation Project
+## 🛠️ Development Workflow
 
-### Project Vision
-Intelligent integration between Obsidian career planning vault and LaTeX CV repository, enabling:
-- **Automated Content Sync**: Changes in career notes automatically update CV
-- **Job Application Tailoring**: Company-specific CV customization
-- **Career Progress Tracking**: Milestone-based CV updates
-- **Interview Preparation Integration**: Consistent application strategy
+### LaTeX Compilation
 
-### Content Flow
-```
-Obsidian Notes → Content Parser → LaTeX Processor → Git Commit → PDF Output
-```
-
-### Automation Workflow
-1. **Monitor**: Detect changes in Obsidian career documentation
-2. **Extract**: Parse relevant content for CV updates
-3. **Transform**: Map Obsidian content to LaTeX sections
-4. **Update**: Modify CV with new content
-5. **Compile**: Generate updated PDF
-6. **Commit**: Version control with descriptive messages
-
-## 🛠️ Development Setup
-
-### TaskMaster Integration
 ```bash
-# Initialize TaskMaster project
-task-master init
+# Using latexmk (recommended)
+latexmk -pdf cv_diomidis_anadiotis_2025_v1.tex
 
-# View project status
-task-master list
-
-# Get next task
-task-master next
+# Using pdflatex (manual)
+pdflatex cv_diomidis_anadiotis_2025_v1.tex
+# Run twice if you have references/links
+pdflatex cv_diomidis_anadiotis_2025_v1.tex
 ```
 
-### Branch Strategy
-- `main`: Production-ready CV versions
-- `cv_optimization_*`: Feature development branches
-- `cv_rework_*`: Major restructuring iterations
+### VS Code Integration
 
-### Testing Strategy
-- **Unit Tests**: Individual component validation
-- **Integration Tests**: System workflow verification
-- **End-to-End Tests**: Complete automation scenarios
-- **Manual Review**: Content quality and formatting
+1. Install LaTeX Workshop extension
+2. Open `.tex` file in VS Code
+3. Use `Ctrl+Alt+B` (or `Cmd+Alt+B` on Mac) to build
+4. Use `Ctrl+Alt+V` (or `Cmd+Alt+V` on Mac) to view PDF
 
-## 📝 Usage Examples
+### Version Control Workflow
 
-### Manual CV Updates
 ```bash
-# Create feature branch
-git checkout -b cv_enhancement_feature
+# Create feature branch for CV updates
+git checkout -b update-experience-section
 
 # Edit CV content
-vim cv_1023.tex
+# (VS Code LaTeX Workshop provides syntax highlighting and live preview)
+vim cv_diomidis_anadiotis_2025_v1.tex
 
 # Compile and review
-pdflatex cv_1023.tex
-open cv_1023.pdf
+latexmk -pdf cv_diomidis_anadiotis_2025_v1.tex
+open cv_diomidis_anadiotis_2025_v1.pdf
 
 # Commit changes
-git add cv_1023.tex cv_1023.pdf
-git commit -m "feat: Add new achievement metrics"
+git add cv_diomidis_anadiotis_2025_v1.tex cv_diomidis_anadiotis_2025_v1.pdf
+git commit -m "feat: Update experience section with latest role"
+
+# Merge to main
+git checkout main
+git merge update-experience-section
 ```
 
-### Automated Integration (Planned)
-```bash
-# Start automation system
-python cv_integration.py --monitor
+## 🎯 Template Features
 
-# Tailor CV for specific company
-python cv_integration.py --tailor "Company Name"
+### Technical Specifications
 
-# Update based on career progress
-python cv_integration.py --check-progress
-```
+- **Document Class**: Article with 11pt font
+- **Page Layout**: Letter paper with optimized margins
+- **Typography**: Linux Libertine font family for professional appearance
+- **Colors**: Custom blue theme (`#005b96`) for section headers
+- **Icons**: FontAwesome integration for contact information
+- **Encoding**: UTF-8 with Unicode support for ATS compatibility
 
-## 🎯 Strategic Alignment
+### LaTeX Packages Used
 
-### Career Goals Integration
-- **Senior Engineer Positioning**: Technical leadership emphasis
-- **Enterprise Experience**: Large-scale system development
-- **Business Impact**: Quantified value delivery
-- **Team Leadership**: Mentoring and collaboration skills
-
-### Job Search Optimization
-- **ATS Compatibility**: Machine-readable formatting
-- **Keyword Optimization**: Industry-relevant terminology
-- **Quantified Achievements**: Data-driven impact demonstration
-- **Customization Ready**: Company-specific tailoring capability
-
-## 🤝 Contributing
-
-### Development Workflow
-1. Review TaskMaster task list
-2. Create feature branch from main
-3. Implement changes with comprehensive testing
-4. Update documentation and commit with detailed messages
-5. Create pull request for review
-
-### Code Standards
-- **Commit Messages**: Descriptive, conventional format
-- **Documentation**: Comprehensive README and inline comments
-- **Testing**: Unit and integration test coverage
-- **Version Control**: Semantic versioning for releases
+- `fullpage`, `titlesec`, `enumitem` - Layout and formatting
+- `hyperref` - Clickable links and PDF metadata
+- `fontawesome` - Professional icons
+- `xcolor`, `geometry` - Color and page layout
+- `libertine` - Professional typography
+- `ragged2e` - Text justification
 
 ## 📄 License
 
@@ -173,4 +139,4 @@ python cv_integration.py --check-progress
 
 ---
 
-**Last Updated**: June 8, 2025  
+**Last Updated**: October 2, 2025  
