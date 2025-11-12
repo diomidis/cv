@@ -196,18 +196,15 @@ includeheadfoot % Include space for header/footer
 \resumeCenteredSection{Professional Summary}
 \small{
 \justifying
-Customer-focused software engineer with proven expertise in technical initiatives to deliver robust, scalable and maintainable enterprise systems at Europe's largest independent automotive company. Specialised in architecting event-driven microservices using C\#/.NET Core, CQRS patterns, and Azure cloud technologies.
-Demonstrated success in co-leading cross functional team efforts and mentoring engineers with excellent interpersonal and communication skills while delivering high-quality software at scale-managing complex product catalogs.
-Strong background in building omnichannel fullstack customer experiences.
-Experience includes legacy systems modernisation into modern cloud-native architectures while maintaining availability for mission-critical customer, internal and integration applications.
+Customer-focused software engineer with 7+ years delivering robust, scalable enterprise systems at Europe's largest independent automotive company. Proven track record co-leading cross-functional teams, mentoring engineers, and modernising legacy systems into cloud-native architectures. Strong background building omnichannel customer experiences that drive measurable business impact, with expertise in event-driven microservices and full-stack development.
 }
 
 \resumeCenteredSection{Technical Expertise}
 \resumeItemColumns{
-.NET \& .NET Framework & CQRS with MediatR & React.js/TypeScript \\
-Azure Service Bus & Docker/Kubernetes & TDD/Cypress Testing \\
-Event-Driven Microservices & SQL Server/Redis & MassTransit Messaging \\
-Domain-Driven Design & RESTful APIs/GraphQL & Data Analysis \& Interpretation
+.NET Core \& C\# & CQRS \& Event Sourcing & React.js/TypeScript \\
+Azure Service Bus & Docker/Kubernetes & TDD \& E2E Testing \\
+Event-Driven Microservices & SQL Server/Redis & MassTransit \& Messaging \\
+Domain-Driven Design & RESTful APIs/GraphQL & Cloud Architecture
 }
 
 %----------- WORK EXPERIENCE -----------
@@ -216,35 +213,52 @@ Domain-Driven Design & RESTful APIs/GraphQL & Data Analysis \& Interpretation
 
 \resumeSubheading
 {\href{https://www.arnoldclark.com/about-us}{Arnold Clark}}{London, UK --Remote}
-{Senior Software Engineer}{Jan 2025--Now}
+{Senior Software Engineer}{Jan 2024--Present}
 \resumeItemListStart
 \resumeItem{
-Co-led complete modernisation of customer-facing booking platform serving 220k monthly active users that improved customer journey conversion by 17\%, directly contributing to £15M+ in annual digital revenue growth.
+Co-led complete modernisation of customer-facing booking platform serving 220k monthly active users, improving customer journey conversion by 17\% and contributing to £15M+ in annual digital revenue growth.
 }
 \resumeItem{
-Complete ownership of availability feature showing real-time appointment slots based on product catalog availability, reducing customer friction by 35-50\% (page bounces) and increasing bookings by 18.5\% (3k additional bookings in 6 weeks). Improved conversion rate by a further 7\% through data-driven UX optimization, eliminating multi-step navigation frustration while maintaining sub-second response times at scale.
+Delivered real-time appointment availability feature integrated with product catalog, reducing customer friction by 35-50\% (page bounces) and increasing bookings by 18.5\% (3k additional bookings in 6 weeks).
 }
 \resumeItem{
-Designed and implemented event-driven microservices using CQRS with MediatR, .NET Core 8, and Azure Service Bus, handling 50,000+ daily transactions with heavy background processing. Established distributed caching with Redis and implemented auto-scaling strategies in Kubernetes to handle peak loads.
+Achieved additional 7\% conversion improvement through data-driven UX optimization, eliminating multi-step navigation while maintaining sub-second response times at scale.
 }
 \resumeItem{
-Contributed heavily in real-time inventory synchronization system managing 10k products across 200+ locations, processing updates within milliseconds. Refactored legacy product and service branch availability engine with event-sourced (migrating from EventStore to Service Bus) ensuring accurate availability levels across web, mobile, and in-store channels.
+Architected event-driven microservices using CQRS with MediatR, .NET Core 8, and Azure Service Bus, handling 50,000+ daily transactions with heavy background processing.
 }
 \resumeItem{
-Mentored junior engineers in SOLID principles, TDD practices, refactoring, green field development and cloud architecture patterns. Collaborated directly with product owners, UX designers, QA and business stakeholders.
+Established distributed caching with Redis and auto-scaling strategies in Kubernetes to handle peak loads efficiently.
+}
+\resumeItem{
+Built real-time inventory synchronization system managing 10k products across 200+ locations, processing updates within milliseconds.
+}
+\resumeItem{
+Refactored legacy availability engine using event-sourcing (migrated from EventStore to Service Bus), ensuring accurate availability across web, mobile, and in-store channels.
+}
+\resumeItem{
+Mentored junior engineers in SOLID principles, TDD practices, and cloud architecture patterns while collaborating with product owners, UX designers, and stakeholders.
 }
 \resumeItemListEnd
 \vspace{3mm}
 \resumeSubSubheading
-{Software Engineer}{Dec 2021--Jan 2025}
+{Software Engineer}{Dec 2021--Jan 2024}
 
 \resumeItemListStart
 \resumeItem{
-Proposed, designed, and migrated third-party integration from resource-intensive database jobs to a high-performance event processing application, replacing legacy stored procedures and achieving 5x faster processing of millions of records while introducing comprehensive auditing capabilities; implemented using Hangfire for job scheduling, MassTransit for messaging, and a configuration-driven architecture supporting both direct database operations and service bus integration with enterprise-grade error handling and concurrent execution prevention}
+Proposed and delivered migration of third-party integration from resource-intensive database jobs to high-performance event processing, achieving 5x faster processing of millions of records.
+}
 \resumeItem{
-Designed and developed RESTful APIs serving React frontends and internal department-wide applications, implementing layered architecture with clean separation of concerns; built reusable component libraries and maintained comprehensive API documentation using Swagger/OpenAPI specifications}
+Implemented solution using Hangfire for job scheduling, MassTransit for messaging, and configuration-driven architecture with enterprise-grade error handling and comprehensive auditing.
+}
 \resumeItem{
-Designed and optimized SQL Server schemas and implemented persistence-based solutions for unstructured availability and product data types. Created efficient indexing strategies and query optimization reducing database response times by 60\% in some cases.
+Designed and developed RESTful APIs serving React frontends and internal applications, implementing layered architecture with clean separation of concerns.
+}
+\resumeItem{
+Built reusable component libraries and maintained comprehensive API documentation using Swagger/OpenAPI specifications.
+}
+\resumeItem{
+Designed and optimized SQL Server schemas with efficient indexing strategies, reducing database response times by up to 60\%.
 }
 \resumeItemListEnd
 \vspace{3mm}
@@ -252,10 +266,16 @@ Designed and optimized SQL Server schemas and implemented persistence-based solu
 {Associate Software Engineer}{Dec 2019--Dec 2021}
 \resumeItemListStart
 \resumeItem{
-Developed comprehensive test suites using NUnit and Cypress for end-to-end testing. Implemented automated testing strategies with TestContainers ensuring code quality across 20+ microservices and legacy codebases. Practiced test-first development approach from business requirements through to production code, whenever possible.
+Developed comprehensive test suites using NUnit and Cypress with TestContainers, ensuring code quality across 20+ microservices and legacy codebases.
 }
 \resumeItem{
-Worked closely with UX/UI teams, product managers, and business stakeholders to deliver small and medium-sized features. Dived into legacy codebases and located refactoring opportunities. Participated in regular Tech Development days, hackathons, and knowledge-sharing sessions to drive engineering excellence.
+Practiced test-first development approach from business requirements through to production code.
+}
+\resumeItem{
+Collaborated with UX/UI teams, product managers, and business stakeholders to deliver features while identifying refactoring opportunities in legacy codebases.
+}
+\resumeItem{
+Participated in Tech Development days, hackathons, and knowledge-sharing sessions to drive engineering excellence.
 }
 \resumeItemListEnd
 \resumeSubSubheading
@@ -272,9 +292,11 @@ Analyzed and modeled complex business domains, translating requirements into tec
 {Research Assistant in Cognitive Computing}{Jan 2015--Sep 2015}
 \resumeItemListStart
 \resumeItem{
-Developed cognitive research software focusing on the Euclidean Travelling Salesman Problem utilizing Eyetribe eye tracker
-for real-time cognitive process capture. Conducted selective attention experiments and analyzed data using R and RStudio,
-creating visualizations and models for cognitive insights in an interdisciplinary research environment.}
+Developed cognitive research software for the Euclidean Travelling Salesman Problem using Eyetribe eye tracker for real-time cognitive process capture.
+}
+\resumeItem{
+Conducted selective attention experiments and analyzed data using R and RStudio, creating visualizations and models for cognitive insights.
+}
 \resumeItemListEnd
 \vspace{3mm}
 
@@ -321,7 +343,11 @@ cloud computing, data analytics and IT compliance}
 \section{Volunteering}
 \resumeSubHeadingListStart
 \resumeItem{
-Served as openSUSE Project Advocate (2010-2014) promoting Linux distribution across Greece and Europe through translation, documentation, and bug fixing; volunteered at FOSDEM (2011-2014) and hosted Novell SUSE booth at LinuxCon Europe 2012 conference, contributing to open-source community engagement and technical evangelism}
+Served as openSUSE Project Advocate (2010-2014), promoting Linux distribution across Greece and Europe through translation, documentation, and bug fixing.
+}
+\resumeItem{
+Volunteered at FOSDEM (2011-2014) and hosted Novell SUSE booth at LinuxCon Europe 2012, contributing to open-source community engagement.
+}
 \resumeSubHeadingListEnd
 
 %-------------------------------------------
